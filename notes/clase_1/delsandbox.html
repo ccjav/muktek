@@ -1,0 +1,38 @@
+const React = window.React;
+const ReactDOM = window.ReactDOM;
+
+/*
+  <h1>Taco Love</h1>
+  <h2>Mi lugares de tacos favoritos</h2>
+  <ul>
+    <li>Vipsito</li>
+    <li>Taco 2</li>
+    <li>Taco 3</li>
+  </ul>
+*/
+
+const Title = React.createElement("h1", {}, "Taco Love");
+
+const Subtitle = React.createElement("h2", {}, "Mi lugares de tacos favoritos")
+
+const List=React.createElement(
+  "ul",
+  {},
+  React.createElement(
+    "li",
+    {},
+    "Tacos de doña pelos"
+  ),
+  React.createElement(
+    "li",
+    {},
+    "Tacos el güero"
+  )
+)
+
+const App = React.createElement("div", {}, Title, Subtitle, List);
+
+ReactDOM.render(
+  App,
+  document.getElementById("app")
+)

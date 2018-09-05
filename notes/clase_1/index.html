@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="app"></div>
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  	<script>
+  		const React = window.React;
+  		const ReactDOM = window.ReactDOM;
+
+  		// Por convención, los elementos van con mayúsculas
+  		const Title = React.createElement(
+  			//<<tag>>
+  			// <<attibute object>> (<<props>>)
+  			// <<children>>
+  			"h1",
+  			{ className: "title", id: "elId" },
+  			"Welcome to AstoDB"
+  		)
+
+  		const Subtitle = React.createElement(
+  			"h2",
+  			{},
+  			"Subtítulo"
+  		)
+
+  		const FeaturedAstronoutsList = React.createElement(
+  			"ul",
+  			{},
+  			React.createElement(
+  				"li",
+  				{},
+  				"Yuri Gagarin"
+  			),
+  			React.createElement(
+  				"li",
+  				{},
+  				"Valentina Tershkova"
+  			)
+  		)
+
+  		// toda nuestra aplicación entra en este elemente 'App'
+  		const App = React.createElement(
+  			"div",
+  			{  },
+  			Title,
+  			Subtitle,
+  			FeaturedAstronoutsList
+  		)
+
+  		// En react no podemos usar la palabra clave 'class', en lugar usamos className
+  		// a esta función solo le podemos pasar un sólo elemento (App)
+  		ReactDOM.render(
+  			App,
+  			document.getElementById("app")
+  		)
+  	</script>
+</body>
+</html>
