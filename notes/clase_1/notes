@@ -1,0 +1,26 @@
+La palabra clave 'import' la usamos para importar librerías.
+import App from './App'; es muy importante. Es la que carga App.js
+
+lOS COMPONENTES son como clases. 
+los elementos son como objetos
+los elementos son instanciados con jsx
+
+extends en javascript
+
+para hacer javascript dentro de una tag de jsx, lo haremos usando llaves: { V}
+hay componentes funcionales
+
+no dejar tags abiertos
+
+hay componentes clase
+
+
+Tarea portfolio
+
+Pasaremos de html a react usando jsx y componentes
+cada componente irá en su propia carpeta, 'components'. eg title.js exporamos desde aquí e importamos donde haya que importarlo
+para usar jsx simepre hay que importar react, {component} from react....
+github: assignment react portfolio syntax twice (está en el Slack)
+
+import "./css/styles.css"
+
