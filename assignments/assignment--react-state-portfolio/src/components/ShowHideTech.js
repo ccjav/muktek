@@ -8,17 +8,29 @@ import React, { Component } from 'react';
 
 class ShowHideTech extends Component {
 
+  state = {
+    isVisible: false
+  }
+
+  handleClick = () => {
+    this.setState({
+      isVisible: !this.state.isVisible
+    });
+  };
+
   render() {
 
     const techlistHiddenClassname = `techlist--hidden`
     const techlistVisibleClassname = `techlist--visible`
 
-    let techlistStatus = techlistHiddenClassname
+    let techlistStatus = (this.state.isVisible) ? techlistVisibleClassname : techlistHiddenClassname    
+    let showHideButtonText = (this.state.isVisible) ? '- Hide Tech' : '+ Show Tech'
 
     return (
       <section>
         <h4>Technologies</h4>
-        <button className="toggle-techlist">+ Show Tech</button>
+        {/* aquí estamos usando clases para mostrar y desaparecer el elemente, en lugar de la forma que se usó en el proyecto de los astronautas que hicimos en clase */}
+        <button className="toggle-techlist" onClick={this.handleClick}>{showHideButtonText}</button>
 
         <div className={`techlist ${techlistStatus}`}>
           <span className="techlist__icon devicons devicons-github_badge"/>
@@ -35,3 +47,5 @@ class ShowHideTech extends Component {
     );
   }
 }
+
+export default ShowHideTech;

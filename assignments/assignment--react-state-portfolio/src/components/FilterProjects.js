@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { projectData } from '../data/datasource'
+// Aquí estamos importando los datos en el mismo componente. RIchard nos comenta que si los datos son usados solamente por el componente, entonces está bien, si es usado por otros componentes, lo vamos subiendo de nivel
+import { projectData } from '../data/datasource';
+import Project from './Project';
 
 /*  Advice:
    (1) Create the component's JSX by using .map() on `projectData`
@@ -23,6 +25,13 @@ import { projectData } from '../data/datasource'
 
 class FilterProjects extends Component {
 
+  handleClick = () => {
+    alert('hola desde button de filter projects')
+    // this.setState({
+    //   isVisible: !this.state.isVisible
+    // });
+  };
+
   render() {
     const projectSelectedClassVal = 'project-type--selected'
 
@@ -40,29 +49,39 @@ class FilterProjects extends Component {
 
     return (
       <section>
-          <h4>Projects</h4>
+        <h4>Projects</h4>
 
-          <div className="project-types-list">
-            <span data-ptype="all" className={`project-type project-type--all ${allSelectedRenderedClass}`}>
-              All
-            </span>
+        <div className="project-types-list">
+          <span data-ptype="all" className={`project-type project-type--all ${allSelectedRenderedClass}`} onClick={this.handleClick}>
+            All
+          </span>
 
-            <span data-ptype="solo" className={`project-type project-type--solo ${soloSelectedRenderedClass}}`}>
-              <i className="ion-person"></i>Solo
-            </span>
+          <span data-ptype="solo" className={`project-type project-type--solo ${soloSelectedRenderedClass}}`}>
+            <i className="ion-person"></i>Solo
+          </span>
 
-            <span data-ptype="team" className={`project-type project-type--team ${teamSelectedRenderedClass}`}>
-              <i className="ion-person-stalker"></i>Team
-            </span>
-          </div>
+          <span data-ptype="team" className={`project-type project-type--team ${teamSelectedRenderedClass}`}>
+            <i className="ion-person-stalker"></i>Team
+          </span>
+        </div>
 
-          <div className='projects-list'>
+        <div className='projects-list'>
 
-            {/* Step (1) --- .map() the projectData to JSX  */}
+          {/* Step (1) --- .map() the projectData to JSX  */
+            projectData.map(project => {
+              // Aquí estamos abriendo paréntesis después de return, pero también funciona cuando no lo ponemos.
+              return (
+                <Project name={project.projectName} solo={project.solo} />
+              );
+            })
+          }
 
-          </div>
-        </section>
+        </div>
+      </section>
 
     );
   }
 }
+
+
+export default FilterProjects;

@@ -17,17 +17,17 @@ class Project extends Component {
     const soloProjectClassName = 'project--solo'
     const teamProjectClassName = 'project--team'
 
-    let renderedClassVal = soloProjectClassName
-      // will be conditionally rendered based on `solo` value
+    let renderedClassVal = (this.props.solo) ? soloProjectClassName : teamProjectClassName    
+
+    // will be conditionally rendered based on `solo` value
       // for project , passed in through props
 
     return (
-      return <div className={`project ${renderedClassVal}`}>
-        <span className="project__title">{theProjectName}</span>
+      <div className={`project ${renderedClassVal}`}>
+        <span className="project__title">{this.props.name}</span>
       </div>
     );
   }
 }
-
 
 export default Project
