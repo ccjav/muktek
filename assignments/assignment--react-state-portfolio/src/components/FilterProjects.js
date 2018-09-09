@@ -24,20 +24,36 @@ import Project from './Project';
  */
 
 class FilterProjects extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedProjectFilter: "all"
+    };
+  }
 
-  handleClick = () => {
-    alert('hola desde button de filter projects')
-    // this.setState({
-    //   isVisible: !this.state.isVisible
-    // });
+  handleClick = (e) => {
+    this.setState({
+      selectedProjectFilter: e.currentTarget.dataset.ptype
+    });
   };
 
   render() {
+
+    const filteredData = projectData.filter(project => {
+      if (this.state.selectedProjectFilter === "all") {
+        return true
+      } else if (this.state.selectedProjectFilter === "solo") {
+        return project.solo === true
+      } else if (this.state.selectedProjectFilter === "team") {
+        return project.solo === false
+      }
+    })
+
     const projectSelectedClassVal = 'project-type--selected'
 
-    let allSelectedRenderedClass = projectSelectedClassVal
-    let soloSelectedRenderedClass = ''
-    let teamSelectedRenderedClass = ''
+    let allSelectedRenderedClass = (this.state.selectedProjectFilter === "all") ? projectSelectedClassVal : ''
+    let soloSelectedRenderedClass = (this.state.selectedProjectFilter === "solo") ? projectSelectedClassVal : ''
+    let teamSelectedRenderedClass = (this.state.selectedProjectFilter === "team") ? projectSelectedClassVal : ''
 
     // change value of 'let' variables based on component state for whether
     //'all', 'team', or 'solo' is selected
@@ -56,11 +72,11 @@ class FilterProjects extends Component {
             All
           </span>
 
-          <span data-ptype="solo" className={`project-type project-type--solo ${soloSelectedRenderedClass}}`}>
+          <span data-ptype="solo" className={`project-type project-type--solo ${soloSelectedRenderedClass}`} onClick={this.handleClick}>
             <i className="ion-person"></i>Solo
           </span>
 
-          <span data-ptype="team" className={`project-type project-type--team ${teamSelectedRenderedClass}`}>
+          <span data-ptype="team" className={`project-type project-type--team ${teamSelectedRenderedClass}`} onClick={this.handleClick}>
             <i className="ion-person-stalker"></i>Team
           </span>
         </div>
@@ -68,10 +84,10 @@ class FilterProjects extends Component {
         <div className='projects-list'>
 
           {/* Step (1) --- .map() the projectData to JSX  */
-            projectData.map(project => {
+            filteredData.map(project => {
               // Aquí estamos abriendo paréntesis después de return, pero también funciona cuando no lo ponemos.
               return (
-                <Project name={project.projectName} solo={project.solo} />
+                <Project key={project.name} name={project.projectName} solo={project.solo} />
               );
             })
           }
