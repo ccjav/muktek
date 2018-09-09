@@ -16,7 +16,7 @@ class WorkHistory extends Component {
                     to the <Job> component as props...
             */
             this.props.jobsList.map(job => {
-              return <div className="job">
+              return <div key={job.name} className="job">
                        <div className="job__years">
                          <h6 className="job__end">{job.years.end}</h6>
                          <h6 className="job__start">{job.years.start}</h6>

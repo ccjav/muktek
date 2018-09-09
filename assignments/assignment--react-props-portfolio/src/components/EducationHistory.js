@@ -17,7 +17,7 @@ class EducationHistory extends Component {
                     to the <EduTitle> component as props...
             */
             this.props.eduList.map(degree => {
-              return <div className="degree">
+              return <div key={degree.name} className="degree">
                        <h5 className="degree__institute">{degree.institute}</h5>
                        <p className="degree__field">{degree.fieldOfStudy}</p>
                        <p className="degree__dates">{degree.dates}</p>

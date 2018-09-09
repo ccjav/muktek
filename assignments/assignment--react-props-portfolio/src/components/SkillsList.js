@@ -14,7 +14,7 @@ class SkillsList extends Component {
               NOTE: you must pass the string value to the <Skills> component as props...
             */
             this.props.skills.map(skill => {
-              return <span className="skills-list__single">{skill}</span>
+              return <span key={skill.name} className="skills-list__single">{skill}</span>
             })
           }
         </div>
