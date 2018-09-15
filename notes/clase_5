@@ -1,0 +1,52 @@
+ayer vimos varios patrones. vimos el de búsqueda: guardamos el query a un estado y luego lo único que hicimos es filtrarlo..
+
+el estado se mantenía en App y de ahí bajaba y volvía a subir...
+
+hoy dejaremos un poco de lado el react core y empezaremos a ver librerías. veremos el tema de más de una página... rutas, etc...
+
+Rutas
+
+La ruta nos lleva a una vista. hay páginas estáticas y hay dinámicas..
+
+con react no es necesario usarlo para todo un site completo, lo podemos agregar a sólo un elemento ¿?
+... un solo componente a diferencia de una single page app, spa...
+
+"el código de aeromexico es heromoso"... es una app de react
+
+react router
+
+resuelve el problema de routing
+
+en react hay una cosa que se llama context que pasa estado sin hacerlo explícito... es un poco de magia negra...
+switch hay que usarlo para matchear una sola página y en el futuro también para otras cosas que veremos
+el elemento anchor es elq ue nos saca de la página y por eso no sirve con spa's... por eso, para navegación interna usamos el comṕonente LInk, que es parte de react router. link to en lugar de a href... que tiene un prevent default para que no ocurra el comportamiento predeterminado del navegador.. usa Window.history
+
+
+estructura de datos stack
+react router toma el control del routing.. se lo quita al browser
+
+un compoenente no solo tiene que ser una clase. también puede ser una función
+
+en las arrows functions, si la función solamente tiene un argumento, no es necesario ponerle paréntesis
+los componentes son funciones
+
+
+componentes como páginas
+
+para que es eject en create react app?
+
+qué es await??
+
+en un proyecto es bueno diferenciar entre tus pages y tus components y separarlos en diferentes directorios
+
+redux en pocas palabras es un estado de toda la aplicación
+redux form y final form son del mismo autor
+
+aws amplify
+
+lo que hace richard con sus componentes en que le da una carpeta a cada uno, tiene un archivo del componente e.g Header.js y tiene un index.js, el cual simplemente exporta el componente!
+
+en la ultima version de react salió React.Fragment, el cual nos ayuda a no tener que poner a fuerzas un div padre para todo
+
+horchatajs
+

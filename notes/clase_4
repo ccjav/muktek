@@ -1,0 +1,42 @@
+cuando usamos includes, antes de correrlo conviene pasarlo todo a mayúsculas o minúsculas
+
+yarn es muy parecido a npm. lo importante al decidir entre ambas, stick to one. yarn usa yarn.lock, npm usa
+package.lock.json...
+react es una librería.
+node es un entorno que nos permite ejecutar js fuera del browser... 
+
+jsx viene a reemplazar lo que es react createelement...+++
+
+resuelve tu deuda rails meetup
+
+
+recuerda. los metodos que usamos para manejar eventos (como onChange) se llaman como el
+evento: handleChange.
+
+por definicion, state es un objeto que sirve para el uso de un componente y que puede ser 
+pasado a sus hijos.
+
+es responsabilidad del componente filtrar? o solo renderear? ojo con esto. en los ejemplos en clase
+las listas generalmente se dedican a sólo renderear, el filtro se define arriba
+
+el termino normalized es bueno cuando normalizamos algo con cosas como upcase o downcase...
+
+leer libro : clean code
+
+en el ejercicio de icecream list , search, pudimos ver como pasar un query de un componente a otro componente
+hermano en el mismo nivel
+
+cual es la mejor forma de definir el estado?? state o constructor
+
+ojo con el prevent default de los formularios.. hay que usarlo..
+
+para que era React.createRef ??
+
+spread    ...Array
+
+conviene que los items de listas sean su propio componente
+
+final form librería para formularios de react checar...
+
+a return le puede seguir curly braces, o parentesis o nada ¿?...
+
