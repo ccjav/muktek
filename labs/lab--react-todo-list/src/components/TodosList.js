@@ -6,14 +6,20 @@ class TodosList extends Component {
     this.props.onDeleteTodoItem(id);
   };
 
+  handleCompletedTodoItem = todoItemId => {
+    //alert("hola desde todos list");
+    this.props.onCompletedTodoItem(todoItemId);
+  };
+
   render() {
     return (
-      <ul>
-        {this.props.data.map(todo => (
+      <ul className="todosList">
+        {this.props.data.map(todoItem => (
           <TodoItem
-            key={todo.id}
-            todoItem={todo}
+            key={todoItem.id}
+            todoItem={todoItem}
             onDelete={this.handleDeleteTodoItem}
+            onDone={this.handleCompletedTodoItem}
           />
         ))}
       </ul>

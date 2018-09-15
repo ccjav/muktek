@@ -5,7 +5,7 @@ class Header extends Component {
     return (
       <header>
         <h1>Todo list</h1>
-        <span>Normal mode</span>
+        <span>Adventure mode</span>
       </header>
     );
   }

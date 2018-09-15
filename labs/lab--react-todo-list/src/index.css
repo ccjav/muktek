@@ -3,3 +3,30 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.todoItem {
+  margin: 2em;
+  padding: 1em;
+}
+.todoItem button {
+  float: right;
+}
+
+.todoItem__done {
+  text-decoration: line-through;
+}
+
+.todoItem__urgent {
+  background: red;
+}
+
+.todoItem__expired {
+  color: lightslategray;
+}
